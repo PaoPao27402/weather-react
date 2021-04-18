@@ -130,6 +130,11 @@ body {
     text-align: center;
   }
   
+  .coded {
+    color: blueviolet;
+    padding: 8px;
+  }
+  
   .active {
     color: #ffffff;
     cursor: pointer;
