@@ -37,11 +37,11 @@
   }
 }
 
-body {
+.body {
   text-align: center;
 }
 
-h1 {
+.h1 {
   font-size: 45px;
   text-shadow: 1px 1px rgb(165, 164, 164);
   color: #ffffff;
@@ -50,7 +50,7 @@ h1 {
   text-transform: capitalize;
 }
 
-time {
+.time {
   color: #ffffff;
   text-shadow: 1px 1px rgb(165, 164, 164);
   font-family: "Courier New", Courier, monospace;
@@ -98,12 +98,12 @@ h3 {
   font-size: 16px;
 }
 
-p {
+.p {
   font-size: 15px;
   color: #ffffff;
 }
 
-section {
+.section {
   background-image: url("https://i.pinimg.com/originals/59/14/a6/5914a6b343fa43de69dff61cb6f53355.gif");
   margin: 0 auto;
   background-position: center;
@@ -116,23 +116,23 @@ section {
   margin: 15px;
 }
 
-form {
+.form {
   color: #ffffff;
   font-size: 15px;
   padding: 15px;
 }
 
-h5 {
+.h5 {
   color: #ffffff;
 }
 
-li {
+.li {
   list-style: none;
   font-family: "Courier New", Courier, monospace;
   color: #ffffff;
 }
 
-ul {
+.ul {
   font-size: 17px;
   padding: 0;
   margin: 0;
