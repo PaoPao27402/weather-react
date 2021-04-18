@@ -4,12 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Weather from './Weather';
+import Search from "./Search";
 import './Style.css';
 
 ReactDOM.render(
   <React.StrictMode> 
     <App />
     <Weather />
+    <Search />
   </React.StrictMode>,
   document.getElementById('root')
 );
