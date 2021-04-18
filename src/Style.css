@@ -130,11 +130,6 @@ body {
     text-align: center;
   }
   
-  .coded {
-    color: blueviolet;
-    padding: 8px;
-  }
-  
   .active {
     color: #ffffff;
     cursor: pointer;
@@ -152,4 +147,9 @@ body {
   
   .weak:hover {
     color: #a346ce;
+  }
+
+  .coded {
+    color: blueviolet;
+    padding: 8px;
   }
