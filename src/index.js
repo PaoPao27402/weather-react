@@ -6,9 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import Weather from './Weather';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Weather />
+  <React.StrictMode> 
     <App />
+    <Weather />
   </React.StrictMode>,
   document.getElementById('root')
 );
