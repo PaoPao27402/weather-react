@@ -30,7 +30,7 @@ body {
   text-align: center;
 }
 
-.h1 {
+h1 {
   font-size: 45px;
   text-shadow: 1px 1px rgb(165, 164, 164);
   color: #ffffff;
@@ -39,7 +39,7 @@ body {
   text-transform: capitalize;
 }
 
-.time {
+time {
   color: #ffffff;
   text-shadow: 1px 1px rgb(165, 164, 164);
   font-family: "Courier New", Courier, monospace;
@@ -48,7 +48,7 @@ body {
   margin-bottom: 33px;
 }
 
-.temperature {
+temperature {
   color: #ffffff;
   font-size: 85px;
   font-family: "Courier New", Courier, monospace;
@@ -64,7 +64,7 @@ body {
   top: -24px;
 }
 
-.h3 {
+h3 {
   color: #ffffff;
   font-family: "Courier New", Courier, monospace;
   font-size: 30px;
@@ -92,7 +92,7 @@ body {
   color: #ffffff;
 }
 
-.section {
+section {
   background-image: url("https://i.pinimg.com/originals/59/14/a6/5914a6b343fa43de69dff61cb6f53355.gif");
   margin: 0 auto;
   background-position: center;
