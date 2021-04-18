@@ -6,9 +6,7 @@ import './Style.css';
 export default function Weather(props){
 
     function handleResponse(response){
-        alert (`The weather in ${response.data.name} is ${response.data.main.temp}°C`);
-        let weatherData = { city: "City", temp: "0" };
- 
+        alert (`The weather in ${response.data.name} is ${response.data.main.temp}°C`); 
     }
 
     let apiKey = "094780c710fa4efd669f0df8c3991927";
