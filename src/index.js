@@ -8,8 +8,8 @@ import './Style.css';
 
 ReactDOM.render(
   <React.StrictMode> 
-    <App />
     <Search />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
