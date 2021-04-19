@@ -3,12 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Search from "./Search";
 import './Style.css';
 
 ReactDOM.render(
-  <React.StrictMode> 
-    <Search />
+
+  <React.StrictMode>
     <App />
   </React.StrictMode>,
   document.getElementById('root')

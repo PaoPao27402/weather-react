@@ -1,14 +1,11 @@
 import React from "react";
-import Weather from "./Weather";
 import './App.css';
-
+import Search from './Search'
 
 function App() {
   return (
-    <div className="App">
-      <div className="wrapper">
-        < Weather city ="Tokyo"/>
-      </div>
+    <div  className="App">
+      <Search/>
     </div>
   );
 }
