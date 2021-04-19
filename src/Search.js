@@ -35,10 +35,10 @@ export default function weather() {
       </span>
       <ul>
         <li>
-        <WeatherIcon icon="CLOUDY" size="18"/>  <span id="humidity">0</span>% <i className="fas fa-cloud-rain"></i>
+        <WeatherIcon icon="RAIN" size="18"/>  <span id="humidity">0</span>% 
         </li>
         <li>
-        <WeatherIcon icon="WIND" size="18"/>  <span id="wind-speed">0</span>km/h <i className="fas fa-wind"></i>
+        <WeatherIcon icon="WIND" size="18"/>  <span id="wind-speed">0</span>km/h 
         </li>
       </ul>
       <h3 id="description">Today</h3>
