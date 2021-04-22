@@ -1,21 +1,29 @@
 import React, {useState} from "react";
 import axios from "axios";
+import Loader from "react-loader-spinner";
 import WeatherIcon from "./WeatherIcon";
 
 
 
 
-export default function weather() {
-  const [ready, setReady] = useState(false);
-  const [temperature, setTemperature] = useState(null)
+export default function Search() {
+  const [weatherData, setWeatherData] = useState({ready: false})
 
 function handleResponse(response){
 console.log(response.data);
-setTemperature(response.data.main.temp);
-setReady(true);
+setWeatherData({
+  ready:true,
+  temperature:response.data.main.temp,
+  wind: response.data.wind.speed,
+  city:response.data.name,
+  humidity:response.data.main.humidity,
+  date:"Thursday 08:00"
+
+});
+
 }
 
-if (ready){
+if (weatherData.ready){
  return (
     <div className="Weather">
       <form id="search-form">
@@ -29,13 +37,13 @@ if (ready){
         <input type="submit" value="search" className="button" />
       </form>
       <h1>
-       <strong>City</strong>
+       <strong>{weatherData.city}</strong>
       </h1>
       <div className="data" id="todaydata"></div>
-      <p className="time" id="day-time"></p>
+       <p className="time" id="day-time">{weatherData.date}</p>
       <span className="temperature">
       <WeatherIcon icon="CLEAR_DAY" size="75"/>
-        <span>{Math.round(temperature)}</span>
+        <span>{Math.round(weatherData.temperature)}</span>
         <span className="units">
           <a href="/" id="celsius-link" className="active">
             °C
@@ -48,10 +56,10 @@ if (ready){
       </span>
       <ul>
         <li>
-        <WeatherIcon icon="RAIN" size="18"/>  <span id="humidity">0</span>% 
+        <WeatherIcon icon="RAIN" size="18"/>  <span id="humidity">{Math.round(weatherData.humidity)}</span>% 
         </li>
         <li>
-        <WeatherIcon icon="WIND" size="18"/>  <span id="wind-speed">0</span>km/h 
+        <WeatherIcon icon="WIND" size="18"/>  <span id="wind-speed">{Math.round(weatherData.wind)}</span>km/h 
         </li>
       </ul>
       <h3 id="description">Today</h3>
@@ -111,11 +119,19 @@ if (ready){
   );
 } else {
  const apiKey = "094780c710fa4efd669f0df8c3991927";
-  let city = "London"
+  let city = "city"
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse); 
 
-    return "Loading...."
+    return (
+      <Loader
+      type="Rings"
+      color="#00BFFF"
+      height={100}
+      width={100}
+      timeout={3000} 
+    />
+  );
 }
   
  }
