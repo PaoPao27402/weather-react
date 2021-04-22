@@ -1,9 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
+import axios from "axios";
 import WeatherIcon from "./WeatherIcon";
 
+
+
+
 export default function weather() {
-  let weatherData = { city: "City", temp: "0" };
-  return (
+  const [ready, setReady] = useState(false);
+  const [temperature, setTemperature] = useState(null)
+
+function handleResponse(response){
+console.log(response.data);
+setTemperature(response.data.main.temp);
+setReady(true);
+}
+
+if (ready){
+ return (
     <div className="Weather">
       <form id="search-form">
         <input
@@ -16,13 +29,13 @@ export default function weather() {
         <input type="submit" value="search" className="button" />
       </form>
       <h1>
-       <strong>{weatherData.city}</strong>
+       <strong>City</strong>
       </h1>
       <div className="data" id="todaydata"></div>
       <p className="time" id="day-time"></p>
       <span className="temperature">
       <WeatherIcon icon="CLEAR_DAY" size="75"/>
-        <span>{weatherData.temp}</span>
+        <span>{Math.round(temperature)}</span>
         <span className="units">
           <a href="/" id="celsius-link" className="active">
             °C
@@ -96,4 +109,13 @@ export default function weather() {
       </div>
     </div>
   );
+} else {
+ const apiKey = "094780c710fa4efd669f0df8c3991927";
+  let city = "London"
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse); 
+
+    return "Loading...."
 }
+  
+ }
