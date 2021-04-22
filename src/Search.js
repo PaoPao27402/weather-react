@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import axios from "axios";
 import Loader from "react-loader-spinner";
 import WeatherIcon from "./WeatherIcon";
+import FormattedDate from "./FormattedDate"
 
 
 
@@ -15,9 +16,9 @@ setWeatherData({
   ready:true,
   temperature:response.data.main.temp,
   wind: response.data.wind.speed,
-  city:response.data.name,
-  humidity:response.data.main.humidity,
-  date:"Thursday 08:00"
+  city: response.data.name,
+  humidity: response.data.main.humidity,
+  date:new Date(response.data.dt * 1000)
 
 });
 
@@ -40,7 +41,7 @@ if (weatherData.ready){
        <strong>{weatherData.city}</strong>
       </h1>
       <div className="data" id="todaydata"></div>
-       <p className="time" id="day-time">{weatherData.date}</p>
+       <p className="time" id="day-time"><FormattedDate date={weatherData.date}/></p>
       <span className="temperature">
       <WeatherIcon icon="CLEAR_DAY" size="75"/>
         <span>{Math.round(weatherData.temperature)}</span>
