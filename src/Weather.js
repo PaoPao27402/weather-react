@@ -7,11 +7,10 @@ import WeatherInfo from "./WeatherInfo";
 
 
 export default function Weather(props) {
-  const [weatherData, setWeatherData] = useState({ready: false})
+  const [weatherData, setWeatherData] = useState({ready: false});
   const [city, setCity] = useState(props.defaultCity);
 
  function handleResponse(response){
-   console.log(response.data);
    setWeatherData({
    ready:true,
    temperature:response.data.main.temp,
@@ -22,20 +21,19 @@ export default function Weather(props) {
    });
 }
 
-function handleSubmit(event){
-  event.preventDefault();
+function search(){
+  const apiKey = "094780c710fa4efd669f0df8c3991927";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(handleResponse); 
 }
 
-function search(){
-const apiKey = "094780c710fa4efd669f0df8c3991927";
-  let city = "City"
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse); 
+function handleSubmit(event){
+  event.preventDefault();
+  search();
 }
 
 function handleCityChange(event){
-setCity(event.target.valeu);
-search();
+setCity(event.target.value);
 }
 
 if (weatherData.ready){
@@ -43,14 +41,12 @@ if (weatherData.ready){
     <div className="Weather">
       <form onSubmit ={handleSubmit}>
         <input
-          type="text"
+          type="search"
           placeholder="Enter your City"
           autoFocus="off"
-          autoComplete="off"
-          id="city-input"
           onChange = {handleCityChange}
         />
-         <input type="submit" value="search" className="button" />
+         <input type="submit" value="Search" className="button" />
       </form>
       <WeatherInfo data={weatherData} />
     </div>  

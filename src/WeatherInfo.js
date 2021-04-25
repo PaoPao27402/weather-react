@@ -4,7 +4,6 @@ import WeatherIcon from "./WeatherIcon";
 
 
 
-
 export default function WeatherInfo(props){
 return(
     <div className = "WeatherInfo">
