@@ -41,7 +41,7 @@ if (weatherData.ready){
     <div className="Weather">
       <form onSubmit ={handleSubmit}>
         <input
-          type="search"
+          type="text"
           placeholder="Enter your City"
           autoFocus="off"
           onChange = {handleCityChange}
