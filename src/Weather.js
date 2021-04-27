@@ -17,7 +17,8 @@ export default function Weather(props) {
    wind: response.data.wind.speed,
    city: response.data.name,
    humidity: response.data.main.humidity,
-   date:new Date(response.data.dt * 1000)
+   date:new Date(response.data.dt * 1000),
+   icon: response.data.weather[0].icon
    });
 }
 

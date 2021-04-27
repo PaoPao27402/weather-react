@@ -27,13 +27,12 @@ body {
     text-shadow: 1px 1px rgba(0, 0, 0.2);
   }
   
-  .units,
-  .fahrenheit-link {
+  .units {
     font-size: 15px;
     color: #ffffff;
     line-height: 1;
     position: relative;
-    top: -24px;
+    top: -12px;
   }
   
   h3 {

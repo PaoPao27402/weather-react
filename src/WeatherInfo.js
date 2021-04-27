@@ -1,6 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate"
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 
 
 
@@ -13,24 +14,15 @@ return(
        <div className="data" id="todaydata"></div>
         <p className="time" id="day-time"><FormattedDate date={props.data.date}/></p>
        <span className="temperature">
-       <WeatherIcon icon="CLEAR_DAY" size="75"/>
-         <span>{Math.round(props.data.temperature)}</span>
-         <span className="units">
-           <a href="/" id="celsius-link" className="active">
-             °C
-             </a>
-             |
-             <a href="/" id="fahrenheit-link" className="weak">
-             °F
-             </a>
-         </span>
+         <WeatherIcon code={props.data.icon} />
+         <WeatherTemperature celsius={props.data.temperature} />
        </span>
        <ul>
          <li>
-         <WeatherIcon icon="RAIN" size="18"/>  <span id="humidity">{Math.round(props.data.humidity)}</span>% 
+           <span id="humidity">{Math.round(props.data.humidity)}</span>% 
          </li>
          <li>
-         <WeatherIcon icon="WIND" size="18"/>  <span id="wind-speed">{Math.round(props.data.wind)}</span>km/h 
+           <span id="wind-speed">{Math.round(props.data.wind)}</span>km/h 
          </li>
        </ul>
        <h3 id="description">Today</h3>
@@ -42,7 +34,7 @@ return(
                00:00
                </h4>
              <h5 className="weather-icon">
-             <WeatherIcon icon="CLEAR_DAY" size="50"/>
+             //icon
              </h5>
              <p className="temp-day-one">0°C</p>
            </div>
@@ -53,7 +45,7 @@ return(
                00:00
                </h4>
              <h5 className="weather-icon">
-             <WeatherIcon icon="CLEAR_DAY" size="50"/>
+             //icon
              </h5>
              <p className="temp-day-two">0°C</p>
            </div>
@@ -64,7 +56,7 @@ return(
                00:00
                </h4>
              <h5 className="weather-icon">
-             <WeatherIcon icon="CLEAR_DAY" size="50"/>
+             //icon
              </h5>
              <p className="temp-day-three">0°C</p>
            </div>
@@ -75,7 +67,7 @@ return(
                00:00
                </h4>
              <h5 className="weather-icon">
-             <WeatherIcon icon="CLEAR_DAY" size="50"/>
+             //icon
              </h5>
              <p className="temp-day-four">0°C</p>
            </div>
