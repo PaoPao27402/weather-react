@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import axios from "axios";
 import Loader from "react-loader-spinner";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 
 
@@ -40,6 +41,7 @@ setCity(event.target.value);
 if (weatherData.ready){
  return (
     <div className="Weather">
+      <div className="row">
       <form onSubmit ={handleSubmit}>
         <input
           type="text"
@@ -49,8 +51,11 @@ if (weatherData.ready){
         />
          <input type="submit" value="Search" className="button" />
       </form>
+      </div>
       <WeatherInfo data={weatherData} />
+      <WeatherForecast />
     </div>  
+
   );
 
  } else {
