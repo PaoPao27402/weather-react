@@ -14,10 +14,10 @@ return(
         </h1>
        <div className="data" id="todaydata"></div>
         <p className="time" id="day-time"><FormattedDate date={props.data.date}/></p>
-       <span className="temperature">
+       <div className="temperature">
          <WeatherIcon code={props.data.icon} size={82}/>
          <WeatherTemperature celsius={props.data.temperature} />
-       </span>
+       </div>
        <ul>
          <li>
          <WeatherIcon code="09d" size={18}/><span id="humidity">{Math.round(props.data.humidity)}</span>% 
