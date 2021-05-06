@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import WeatherForecastDay from "./WeatherForecastDay";
-import { cleanup } from "@testing-library/react";
 import Loader from "react-loader-spinner";
 
 export default function WeatherForecast(props) {
