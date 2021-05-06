@@ -19,8 +19,15 @@ body {
     margin-top: 0;
     margin-bottom: 33px;
   }
+
+  .temp-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   
-  .temperature {
+  .temperature{
+    display: flex;
     color: #ffffff;
     font-size: 85px;
     font-family: "Courier New", Courier, monospace;
@@ -28,11 +35,14 @@ body {
   }
   
   .units {
-    font-size: 15px;
+    font-size: 18px;
     color: #ffffff;
     line-height: 1;
     position: relative;
-    top: -12px;
+    display: flex;
+    margin-bottom: -12px;
+    font-family: "Courier New", Courier, monospace;
+    text-shadow: 1px 1px rgba(0, 0, 0.2);
   }
   
   h3 {

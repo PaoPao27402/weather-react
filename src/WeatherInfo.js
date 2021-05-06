@@ -14,8 +14,8 @@ return(
         </h1>
        <div className="data" id="todaydata"></div>
         <p className="time" id="day-time"><FormattedDate date={props.data.date}/></p>
-       <div className="temperature">
-         <WeatherIcon code={props.data.icon} size={82}/>
+       <div className="temp-container">
+         <WeatherIcon code={props.data.icon} size={90}/>
          <WeatherTemperature celsius={props.data.temperature} />
        </div>
        <ul>
@@ -28,11 +28,6 @@ return(
        </ul>
        <h3 id="description">Today</h3>
        <br />
-       <div className="boton">
-         <button className="current" id="current-location-button">
-           current
-           </button>
-       </div>
     </div>
     );
 
